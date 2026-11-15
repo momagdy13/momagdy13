@@ -90,14 +90,13 @@ I like owning a feature end to end: the screens, the state behind them, the API 
 
 ## 📈 By the numbers
 
-<p>
-  <img src="https://img.shields.io/badge/commits-3%2C500%2B-02569B?style=for-the-badge" alt="3,500+ commits" />
-  <img src="https://img.shields.io/badge/active%20days-400%2B-0277BD?style=for-the-badge" alt="400+ active days" />
-  <img src="https://img.shields.io/badge/production%20apps-4-0288D1?style=for-the-badge" alt="4 production apps" />
-  <img src="https://img.shields.io/badge/platforms-Android%20%C2%B7%20iOS%20%C2%B7%20Web-039BE5?style=for-the-badge" alt="Android, iOS and Web" />
-</p>
-
-<sub>Private work included · 1,650+ commits in 2025 · 1,940+ so far in 2026</sub>
+<!-- STATS:START -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg" />
+  <img src="assets/stats-light.svg" alt="3,500 commits, 400 active days, 4 production apps on Android, iOS, Web" width="100%" />
+</picture>
+<!-- STATS:END -->
 
 ## 📂 Open source
 
