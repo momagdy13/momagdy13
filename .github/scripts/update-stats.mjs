@@ -291,8 +291,17 @@ if (jsonIdx !== -1) {
   stats = JSON.parse(await readFile(args[jsonIdx + 1], 'utf8'));
 } else {
   const token = process.env.STATS_TOKEN;
-  if (!token) throw new Error('Set STATS_TOKEN (classic PAT with read:user + repo scopes)');
-  stats = await fetchStats(token);
+  if (!token) {
+    console.log('::error::STATS_TOKEN secret is missing. Add a classic PAT (read:user + repo) under Settings → Secrets and variables → Actions.');
+    process.exit(1);
+  }
+  try {
+    stats = await fetchStats(token);
+  } catch (e) {
+    const hint = /\b401\b|Bad credentials/.test(e.message) ? ' The STATS_TOKEN secret is invalid or expired.' : '';
+    console.log(`::error::${e.message.replace(/\s+/g, ' ')}${hint}`);
+    process.exit(1);
+  }
 }
 
 await mkdir('assets', { recursive: true });
