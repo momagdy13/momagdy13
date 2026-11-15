@@ -1,0 +1,93 @@
+{
+  "login": "momagdy13",
+  "updated": "2026-11-15T18:16:39.744Z",
+  "since": 2023,
+  "commits": 4054,
+  "contributions": 4107,
+  "activeDays": 507,
+  "longestStreak": 17,
+  "years": [
+    {
+      "year": 2023,
+      "commits": 51,
+      "contributions": 65
+    },
+    {
+      "year": 2024,
+      "commits": 203,
+      "contributions": 217
+    },
+    {
+      "year": 2025,
+      "commits": 1700,
+      "contributions": 1700
+    },
+    {
+      "year": 2026,
+      "commits": 2100,
+      "contributions": 2125
+    }
+  ],
+  "months": [
+    {
+      "key": "2025-12",
+      "label": "Dec",
+      "total": 311
+    },
+    {
+      "key": "2026-01",
+      "label": "Jan",
+      "total": 101
+    },
+    {
+      "key": "2026-02",
+      "label": "Feb",
+      "total": 54
+    },
+    {
+      "key": "2026-03",
+      "label": "Mar",
+      "total": 384
+    },
+    {
+      "key": "2026-04",
+      "label": "Apr",
+      "total": 330
+    },
+    {
+      "key": "2026-05",
+      "label": "May",
+      "total": 191
+    },
+    {
+      "key": "2026-06",
+      "label": "Jun",
+      "total": 134
+    },
+    {
+      "key": "2026-07",
+      "label": "Jul",
+      "total": 210
+    },
+    {
+      "key": "2026-08",
+      "label": "Aug",
+      "total": 255
+    },
+    {
+      "key": "2026-09",
+      "label": "Sep",
+      "total": 212
+    },
+    {
+      "key": "2026-10",
+      "label": "Oct",
+      "total": 191
+    },
+    {
+      "key": "2026-11",
+      "label": "Nov",
+      "total": 63
+    }
+  ]
+}
