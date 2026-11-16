@@ -98,6 +98,20 @@ I like owning a feature end to end: the screens, the state behind them, the API 
 </picture>
 <!-- STATS:END -->
 
+## 🔥 Activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.svg" />
+  <img src="assets/activity-light.svg" alt="Contribution streaks and the last 31 days, private work included" width="100%" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/snake-light.svg" />
+  <img src="assets/snake-light.svg" alt="Snake eating my contributions" width="100%" />
+</picture>
+
 ## 📂 Open source
 
 | Project | What it is |
