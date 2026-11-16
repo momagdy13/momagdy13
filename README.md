@@ -94,7 +94,7 @@ I like owning a feature end to end: the screens, the state behind them, the API 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.svg" />
-  <img src="assets/activity-light.svg" alt="4,130 contributions, 4,077 commits, 508 active days, current streak 2 days, longest streak 17 days, 4 production apps on Android, iOS, Web" width="100%" />
+  <img src="assets/activity-light.svg" alt="4,131 contributions, 4,078 commits, 508 active days, current streak 2 days, longest streak 17 days, 4 production apps on Android, iOS, Web" width="100%" />
 </picture>
 <!-- STATS:END -->
 
