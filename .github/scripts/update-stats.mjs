@@ -43,6 +43,9 @@ query ($login: String!, $from: DateTime!, $to: DateTime!) {
   user(login: $login) {
     contributionsCollection(from: $from, to: $to) {
       totalCommitContributions
+      totalPullRequestContributions
+      totalPullRequestReviewContributions
+      totalIssueContributions
       restrictedContributionsCount
       contributionCalendar {
         totalContributions
@@ -75,6 +78,9 @@ async function fetchStats(token) {
     years.push({
       year: y,
       commits: c.totalCommitContributions,
+      pullRequests: c.totalPullRequestContributions,
+      reviews: c.totalPullRequestReviewContributions,
+      issues: c.totalIssueContributions,
       contributions: c.contributionCalendar.totalContributions,
       restricted: c.restrictedContributionsCount,
     });
@@ -148,8 +154,28 @@ function summarize(years, days, now) {
     months.push({ key, label: m.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' }), total });
   }
 
+  // Daily habits.
+  let busiest = null;
+  for (const d of active) if (!busiest || days.get(d) > busiest.count) busiest = { date: d, count: days.get(d) };
+  const totalContrib = active.reduce((s, d) => s + days.get(d), 0);
+  const spanDays = active.length ? Math.round((Date.parse(today) - Date.parse(active[0])) / 86400000) + 1 : 0;
+  const weekday = [0, 0, 0, 0, 0, 0, 0];
+  for (const [d, n] of days) weekday[new Date(`${d}T00:00:00Z`).getUTCDay()] += n;
+  const topDay = weekday.indexOf(Math.max(...weekday));
+  const sum = (k) => years.reduce((s, y) => s + (y[k] || 0), 0);
+
   return {
     login: LOGIN,
+    pullRequests: sum('pullRequests'),
+    reviews: sum('reviews'),
+    issues: sum('issues'),
+    busiestDay: busiest,
+    avgPerActiveDay: active.length ? Math.round((totalContrib / active.length) * 10) / 10 : 0,
+    activeRate: spanDays ? Math.round((active.length / spanDays) * 100) : 0,
+    spanDays,
+    weekday,
+    topWeekday: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][topDay],
+    topWeekdayShare: totalContrib ? Math.round((weekday[topDay] / totalContrib) * 100) : 0,
     updated: now.toISOString(),
     since: years[0]?.year,
     commits: years.reduce((s, y) => s + y.commits, 0),
@@ -273,28 +299,47 @@ function renderSvg(stats, theme) {
     })
     .join('');
 
-  // Row 2: headline numbers.
-  const r2Y = r1Y + r1H + gap;
-  const r2H = 84;
-  const r2W = (inner - gap * 3) / 4;
-  const row2 = [
-    { value: fmt(stats.commits), label: 'COMMITS', sub: stats.since ? `since ${stats.since}` : 'all time' },
-    { value: fmt(stats.activeDays), label: 'ACTIVE DAYS', sub: 'days with contributions' },
-    { value: String(STATIC.productionApps), label: 'PRODUCTION APPS', sub: 'live in the stores' },
-    { value: String(STATIC.platforms.length), label: 'PLATFORMS', sub: STATIC.platforms.join(' · ') },
-  ];
-  const row2Svg = row2
-    .map((tile, i) => {
-      const x = pad + i * (r2W + gap);
-      return `
+  // Rows 2 and 3: four small tiles each.
+  const smW = (inner - gap * 3) / 4;
+  const smH = 84;
+  const smallRow = (y, tiles) =>
+    tiles
+      .map((tile, i) => {
+        const x = pad + i * (smW + gap);
+        return `
   <g>
-    <rect x="${x}" y="${r2Y}" width="${r2W}" height="${r2H}" rx="10" fill="${t.tile}" stroke="${t.border}"/>
-    <text x="${x + 16}" y="${r2Y + 34}" class="num2">${esc(tile.value)}</text>
-    <text x="${x + 16}" y="${r2Y + 56}" class="label">${esc(tile.label)}</text>
-    <text x="${x + 16}" y="${r2Y + 72}" class="sub2">${esc(tile.sub)}</text>
+    <rect x="${x}" y="${y}" width="${smW}" height="${smH}" rx="10" fill="${t.tile}" stroke="${t.border}"/>
+    <text x="${x + 16}" y="${y + 34}" class="num2">${esc(tile.value)}</text>
+    <text x="${x + 16}" y="${y + 56}" class="label">${esc(tile.label)}</text>
+    <text x="${x + 16}" y="${y + 72}" class="sub2">${esc(tile.sub)}</text>
   </g>`;
-    })
-    .join('');
+      })
+      .join('');
+
+  const r2Y = r1Y + r1H + gap;
+  const row2Svg = smallRow(r2Y, [
+    { value: fmt(stats.commits), label: 'COMMITS', sub: stats.since ? `since ${stats.since}` : 'all time' },
+    { value: fmt(stats.pullRequests ?? 0), label: 'PULL REQUESTS', sub: 'opened' },
+    { value: fmt(stats.reviews ?? 0), label: 'CODE REVIEWS', sub: 'pull requests reviewed' },
+    { value: fmt(stats.issues ?? 0), label: 'ISSUES', sub: 'opened' },
+  ]);
+  const r3Y = r2Y + smH + gap;
+  const b = stats.busiestDay;
+  const row3Svg = smallRow(r3Y, [
+    {
+      value: fmt(stats.activeDays),
+      label: 'TOTAL ACTIVE DAYS',
+      sub: stats.activeRate ? `${stats.activeRate}% of ${fmt(stats.spanDays)} days` : 'days with contributions',
+    },
+    { value: b ? fmt(b.count) : '0', label: 'BUSIEST DAY', sub: b ? shortDate(b.date) : '—' },
+    { value: String(stats.avgPerActiveDay ?? 0), label: 'DAILY AVERAGE', sub: 'per active day' },
+    {
+      value: stats.topWeekday ? stats.topWeekday.slice(0, 3) : '—',
+      label: 'TOP WEEKDAY',
+      sub: stats.topWeekdayShare ? `${stats.topWeekdayShare}% of contributions` : '',
+    },
+  ]);
+  const r2H = smH * 2 + gap; // rows 2 + 3, so later sections start below row 3
 
   // Section 3: last 31 days, line chart.
   const pts = stats.last31 || [];
@@ -407,25 +452,28 @@ function renderSvg(stats, theme) {
     .yearval { font-size: 14px; fill: ${t.text}; }
   </style>
   <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="14" fill="${t.bg}" stroke="${t.border}"/>
-  <text x="${pad}" y="34" class="head">Private work included</text>
-  <text x="${W - pad}" y="34" class="head" text-anchor="end">${updated ? `Updated ${esc(updated)}` : ''}</text>${row1Svg}${row2Svg}${lineSvg}${monthsSvg}
+  <text x="${pad}" y="34" class="head">Private work included · ${STATIC.productionApps} production apps on ${esc(STATIC.platforms.join(', '))}</text>
+  <text x="${W - pad}" y="34" class="head" text-anchor="end">${updated ? `Updated ${esc(updated)}` : ''}</text>${row1Svg}${row2Svg}${row3Svg}${lineSvg}${monthsSvg}
 </svg>
 `;
 }
 
 const altText = (stats) =>
-  `${fmt(stats.contributions ?? 0)} contributions, ${fmt(stats.commits)} commits, ${fmt(stats.activeDays)} active days, ` +
+  `${fmt(stats.contributions ?? 0)} contributions, ${fmt(stats.commits)} commits, ${fmt(stats.pullRequests ?? 0)} pull requests, ` +
+  `${fmt(stats.reviews ?? 0)} code reviews, ${fmt(stats.issues ?? 0)} issues, ${fmt(stats.activeDays)} active days, ` +
   `current streak ${stats.currentStreak ?? 0} days, longest streak ${stats.longestStreak ?? 0} days, ` +
   `${STATIC.productionApps} production apps on ${STATIC.platforms.join(', ')}`;
 
 // -------------------------------------------------------------- readme ----
 
 function readmeBlock(stats) {
+  // A version stamp per update, so GitHub's image cache never shows a stale card.
+  const v = (stats.updated || new Date().toISOString()).replace(/\D/g, '').slice(0, 12);
   return `<!-- STATS:START -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.svg" />
-  <img src="assets/activity-light.svg" alt="${esc(altText(stats))}" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg?v=${v}" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.svg?v=${v}" />
+  <img src="assets/activity-light.svg?v=${v}" alt="${esc(altText(stats))}" width="100%" />
 </picture>
 <!-- STATS:END -->`;
 }
