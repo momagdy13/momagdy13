@@ -88,23 +88,15 @@ I like owning a feature end to end: the screens, the state behind them, the API 
 > [!NOTE]
 > Most of my day-to-day code lives in the private **[bawq](https://www.bawq.com)** and **[Bawq-Neo](https://github.com/Bawq-Neo)** organizations, so this profile only shows part of it.
 
-## 📈 By the numbers
+## 🔥 Activity
 
 <!-- STATS:START -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg" />
-  <img src="assets/stats-light.svg" alt="4,077 commits, 508 active days, 4 production apps on Android, iOS, Web" width="100%" />
-</picture>
-<!-- STATS:END -->
-
-## 🔥 Activity
-
-<picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.svg" />
-  <img src="assets/activity-light.svg" alt="Contribution streaks and the last 31 days, private work included" width="100%" />
+  <img src="assets/activity-light.svg" alt="4,130 contributions, 4,077 commits, 508 active days, current streak 2 days, longest streak 17 days, 4 production apps on Android, iOS, Web" width="100%" />
 </picture>
+<!-- STATS:END -->
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg" />
