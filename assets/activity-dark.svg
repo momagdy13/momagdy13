@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="372" viewBox="0 0 860 372" role="img" aria-labelledby="title">
+  <title id="title">4,130 contributions, current streak 2 days, longest streak 17 days</title>
+  <defs>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0" stop-color="#1E88E5"/>
+      <stop offset="1" stop-color="#02569B"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1E88E5" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#1E88E5" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    text { font-family: 'Segoe UI', Ubuntu, 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    .num { font-size: 34px; font-weight: 700; fill: #E6EDF3; }
+    .label { font-size: 11.5px; font-weight: 600; letter-spacing: 1.2px; fill: #8B949E; }
+    .sub { font-size: 12.5px; fill: #8B949E; }
+    .tick { font-size: 11px; fill: #8B949E; }
+    .head { font-size: 13px; fill: #8B949E; }
+  </style>
+  <rect x="0.5" y="0.5" width="859" height="371" rx="14" fill="#0D1117" stroke="#30363D"/>
+  <text x="24" y="34" class="head">Streaks · private work included</text>
+  <text x="836" y="34" class="head" text-anchor="end">Updated 16 Nov 2026</text>
+  <g>
+    <rect x="24" y="52" width="260" height="112" rx="10" fill="#161B22" stroke="#30363D"/>
+    <rect x="24" y="52" width="260" height="3" rx="1.5" fill="url(#accent)"/>
+    <text x="42" y="102" class="num">4,130</text>
+    <text x="42" y="128" class="label">TOTAL CONTRIBUTIONS</text>
+    <text x="42" y="148" class="sub">Aug 22, 2023 – Present</text>
+  </g>
+  <g>
+    <rect x="300" y="52" width="260" height="112" rx="10" fill="#161B22" stroke="#30363D"/>
+    <rect x="300" y="52" width="260" height="3" rx="1.5" fill="url(#accent)"/>
+    <text x="318" y="102" class="num">2</text>
+    <text x="318" y="128" class="label">CURRENT STREAK</text>
+    <text x="318" y="148" class="sub">Nov 15 – Nov 16, 2026</text>
+    <circle cx="510" cy="108" r="30" fill="none" stroke="#21262D" stroke-width="6"/>
+    <circle cx="510" cy="108" r="30" fill="none" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"
+      stroke-dasharray="22.2 188.5" transform="rotate(-90 510 108)"/>
+    <path d="M510 95 c5 6 9 10 9 15 a9 9 0 0 1 -18 0 c0 -4 2 -7 4 -9 c0 3 2 5 4 5 c-2 -4 -1 -8 1 -11z" fill="#64B5F6"/>
+  </g>
+  <g>
+    <rect x="576" y="52" width="260" height="112" rx="10" fill="#161B22" stroke="#30363D"/>
+    <rect x="576" y="52" width="260" height="3" rx="1.5" fill="url(#accent)"/>
+    <text x="594" y="102" class="num">17</text>
+    <text x="594" y="128" class="label">LONGEST STREAK</text>
+    <text x="594" y="148" class="sub">May 16 – Jun 1, 2026</text>
+  </g>
+  <text x="24" y="192" class="label">CONTRIBUTIONS · LAST 31 DAYS</text>
+  <text x="836" y="192" class="label" text-anchor="end">198 TOTAL</text>
+    <line x1="58" y1="332" x2="836" y2="332" stroke="#21262D"/>
+    <text x="48" y="336" class="tick" text-anchor="end">0</text>
+    <line x1="58" y1="302" x2="836" y2="302" stroke="#21262D" stroke-dasharray="3 4"/>
+    <text x="48" y="306" class="tick" text-anchor="end">9</text>
+    <line x1="58" y1="272" x2="836" y2="272" stroke="#21262D" stroke-dasharray="3 4"/>
+    <text x="48" y="276" class="tick" text-anchor="end">18</text>
+    <line x1="58" y1="242" x2="836" y2="242" stroke="#21262D" stroke-dasharray="3 4"/>
+    <text x="48" y="246" class="tick" text-anchor="end">27</text>
+    <line x1="58" y1="212" x2="836" y2="212" stroke="#21262D" stroke-dasharray="3 4"/>
+    <text x="48" y="216" class="tick" text-anchor="end">36</text>
+  <path d="M58.0 332.0 L83.9 302.0 L109.9 308.7 L135.8 332.0 L161.7 282.0 L187.7 305.3 L213.6 328.7 L239.5 325.3 L265.5 295.3 L291.4 302.0 L317.3 318.7 L343.3 282.0 L369.2 228.7 L395.1 332.0 L421.1 332.0 L447.0 302.0 L472.9 305.3 L498.9 318.7 L524.8 272.0 L550.7 295.3 L576.7 332.0 L602.6 332.0 L628.5 332.0 L654.5 332.0 L680.4 332.0 L706.3 332.0 L732.3 332.0 L758.2 332.0 L784.1 332.0 L810.1 218.7 L836.0 325.3 L836.0 332 L58.0 332 Z" fill="url(#area)"/>
+  <path d="M58.0 332.0 L83.9 302.0 L109.9 308.7 L135.8 332.0 L161.7 282.0 L187.7 305.3 L213.6 328.7 L239.5 325.3 L265.5 295.3 L291.4 302.0 L317.3 318.7 L343.3 282.0 L369.2 228.7 L395.1 332.0 L421.1 332.0 L447.0 302.0 L472.9 305.3 L498.9 318.7 L524.8 272.0 L550.7 295.3 L576.7 332.0 L602.6 332.0 L628.5 332.0 L654.5 332.0 L680.4 332.0 L706.3 332.0 L732.3 332.0 L758.2 332.0 L784.1 332.0 L810.1 218.7 L836.0 325.3" fill="none" stroke="#1E88E5" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="58.0" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 17, 2026: 0 contributions</title></circle><circle cx="83.9" cy="302.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 18, 2026: 9 contributions</title></circle><circle cx="109.9" cy="308.7" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 19, 2026: 7 contributions</title></circle><circle cx="135.8" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 20, 2026: 0 contributions</title></circle><circle cx="161.7" cy="282.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 21, 2026: 15 contributions</title></circle><circle cx="187.7" cy="305.3" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 22, 2026: 8 contributions</title></circle><circle cx="213.6" cy="328.7" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 23, 2026: 1 contributions</title></circle><circle cx="239.5" cy="325.3" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 24, 2026: 2 contributions</title></circle><circle cx="265.5" cy="295.3" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 25, 2026: 11 contributions</title></circle><circle cx="291.4" cy="302.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 26, 2026: 9 contributions</title></circle><circle cx="317.3" cy="318.7" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 27, 2026: 4 contributions</title></circle><circle cx="343.3" cy="282.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 28, 2026: 15 contributions</title></circle><circle cx="369.2" cy="228.7" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 29, 2026: 31 contributions</title></circle><circle cx="395.1" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 30, 2026: 0 contributions</title></circle><circle cx="421.1" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Oct 31, 2026: 0 contributions</title></circle><circle cx="447.0" cy="302.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 1, 2026: 9 contributions</title></circle><circle cx="472.9" cy="305.3" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 2, 2026: 8 contributions</title></circle><circle cx="498.9" cy="318.7" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 3, 2026: 4 contributions</title></circle><circle cx="524.8" cy="272.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 4, 2026: 18 contributions</title></circle><circle cx="550.7" cy="295.3" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 5, 2026: 11 contributions</title></circle><circle cx="576.7" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 6, 2026: 0 contributions</title></circle><circle cx="602.6" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 7, 2026: 0 contributions</title></circle><circle cx="628.5" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 8, 2026: 0 contributions</title></circle><circle cx="654.5" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 9, 2026: 0 contributions</title></circle><circle cx="680.4" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 10, 2026: 0 contributions</title></circle><circle cx="706.3" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 11, 2026: 0 contributions</title></circle><circle cx="732.3" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 12, 2026: 0 contributions</title></circle><circle cx="758.2" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 13, 2026: 0 contributions</title></circle><circle cx="784.1" cy="332.0" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 14, 2026: 0 contributions</title></circle><circle cx="810.1" cy="218.7" r="2.6" fill="#1E88E5" stroke="#0D1117" stroke-width="1.5"><title>Nov 15, 2026: 34 contributions</title></circle><circle cx="836.0" cy="325.3" r="4" fill="#64B5F6" stroke="#0D1117" stroke-width="1.5"><title>Nov 16, 2026: 2 contributions</title></circle>
+  <text x="58.0" y="352" class="tick" text-anchor="middle">Oct 17</text><text x="187.7" y="352" class="tick" text-anchor="middle">Oct 22</text><text x="317.3" y="352" class="tick" text-anchor="middle">Oct 27</text><text x="447.0" y="352" class="tick" text-anchor="middle">Nov 1</text><text x="576.7" y="352" class="tick" text-anchor="middle">Nov 6</text><text x="706.3" y="352" class="tick" text-anchor="middle">Nov 11</text><text x="836.0" y="352" class="tick" text-anchor="middle">Nov 16</text>
+</svg>
