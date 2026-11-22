@@ -92,9 +92,9 @@ I like owning a feature end to end: the screens, the state behind them, the API 
 
 <!-- STATS:START -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg?v=202611211927" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.svg?v=202611211927" />
-  <img src="assets/activity-light.svg?v=202611211927" alt="4,283 contributions, 4,222 commits, 29 pull requests, 0 code reviews, 0 issues, 513 active days, current streak 7 days, longest streak 17 days, 4 production apps on Android, iOS, Web" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg?v=202611220704" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/activity-light.svg?v=202611220704" />
+  <img src="assets/activity-light.svg?v=202611220704" alt="4,312 contributions, 4,251 commits, 29 pull requests, 0 code reviews, 0 issues, 514 active days, current streak 8 days, longest streak 17 days, 4 production apps on Android, iOS, Web" width="100%" />
 </picture>
 <!-- STATS:END -->
 
