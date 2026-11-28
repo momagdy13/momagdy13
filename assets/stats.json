@@ -9,7 +9,7 @@
   },
   "avgPerActiveDay": 8.5,
   "activeRate": 43,
-  "spanDays": 1194,
+  "spanDays": 1195,
   "weekday": [
     782,
     800,
@@ -21,7 +21,7 @@
   ],
   "topWeekday": "Wednesday",
   "topWeekdayShare": 20,
-  "updated": "2026-11-27T21:26:59.588Z",
+  "updated": "2026-11-28T08:02:04.822Z",
   "since": 2023,
   "commits": 4326,
   "contributions": 4392,
@@ -29,15 +29,11 @@
   "longestStreak": 17,
   "longestStreakFrom": "2026-05-16",
   "longestStreakTo": "2026-06-01",
-  "currentStreak": 12,
-  "currentStreakFrom": "2026-11-15",
-  "currentStreakTo": "2026-11-26",
+  "currentStreak": 0,
+  "currentStreakFrom": null,
+  "currentStreakTo": null,
   "firstContribution": "2023-08-22",
   "last31": [
-    {
-      "date": "2026-10-28",
-      "count": 15
-    },
     {
       "date": "2026-10-29",
       "count": 32
@@ -156,6 +152,10 @@
     },
     {
       "date": "2026-11-27",
+      "count": 0
+    },
+    {
+      "date": "2026-11-28",
       "count": 0
     }
   ],
